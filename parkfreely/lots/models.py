@@ -5,7 +5,7 @@ from geolocation.google_maps import GoogleMaps
 class Lot(models.Model, longit, latit, rating):
      lon = models.FloatField()
      lat = models.FloatField()
-     def __init__(self):
+     def __init__(self, longit, latit, rating):
           self.lon = longit
           self.lat = latit
           self.rating = rating
