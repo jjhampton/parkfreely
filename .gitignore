@@ -65,4 +65,6 @@ pip-delete-this-directory.txt
 # Unit test / coverage reports
 htmlcov/
 .direnv/
-db.sqlite3
+
+# Database is created on host system
+*.db.sqlite3
