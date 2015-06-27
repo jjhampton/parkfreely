@@ -21,18 +21,21 @@ $base-background-color: $very-light-gray;
 
 body {
   font-family: $base-font-family;
-  background-color: #999999;
-  color: $base-font-color;
+  background-color: #525564;
+  color: #364CA8;
 }
 
 .map-canvas {
   height: 500px;
-  @include span-columns(12);
+  @include span-columns(10);
+  @include shift(1);
+  border-radius: 5px;
 }
 
 .addContainer {
   @include span-columns(8);
   @include shift(2);
+  background-color: #74828F; 
   
   .header {
     text-align: center;
@@ -57,6 +60,7 @@ body {
   width: 500px;
   height: 100px;
   display: block;
+  border-radius: 5px;
 }
 
 .user-latitude {
