@@ -6,9 +6,43 @@ export default Ember.Route.extend({
  },
 
  actions: {
-   request: function() {
-     console.log('hello');
-   }
+   submit: function() {
+    var latitude = $('.user-latitude').text();
+    var longitude = $('.user-longitude').text();
+    var description = $('.add-form-description').val();
+    var biking;
+    var walking;
+    var publictransit;
+    var safety = $('.safety :selected').text();
+
+     if ($(".add-form-biking").prop('checked')) {
+       biking = true;
+     }
+     else {
+       biking = false;
+     }
+     if ($(".add-form-walking").prop('checked')) {
+       walking = true;
+     }
+     else {
+       walking = false;
+     }
+     if ($(".add-form-publictransit").prop('checked')) {
+       publictransit = true;
+     }
+     else {
+       publictransit = false;
+     }
+     console.log(latitude);
+     console.log(longitude);
+     console.log(description);
+     console.log(biking);
+     console.log(walking);
+     console.log(publictransit);
+     console.log(safety);
+
+
+   }.bind(this)
  },
 
   getLocation: function() {
