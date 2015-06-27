@@ -10,5 +10,8 @@ export default Ember.Component.extend({
             zoom: 15
         };
         new window.google.maps.Map(this.$('.map-canvas')[0], options);
+        $(window).resize(function() {
+          google.maps.event.trigger(map, "resize");
+        });
     }.on('didInsertElement')
 });
