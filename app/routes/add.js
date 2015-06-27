@@ -40,8 +40,19 @@ export default Ember.Route.extend({
      console.log(walking);
      console.log(publictransit);
      console.log(safety);
-
-
+     $.ajax({
+       method: "POST",
+       url: "localhost:8000/lots/post",
+       data: {
+         "latitude": latitude,
+         "location": longitude,
+         "description": description,
+         "biking": biking,
+         "walking": walking,
+         "publictransit": publictransit,
+         "safety": safety
+         }
+      });
    }.bind(this)
  },
 
