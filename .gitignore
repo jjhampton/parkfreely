@@ -67,4 +67,4 @@ htmlcov/
 .direnv/
 
 # Database is created on host system
-*.db.sqlite3
+db.sqlite3
