@@ -1,18 +1,27 @@
-<h1 class="add-header">ParkFreely Add a Lot!</h1>
-
+<section class="addContainer">
+<h1 class="header">ParkFreely Add a Lot!</h1>
+<div class="map">
 <p class="add-text">Your current location is:</p>
 
-{{google-map latitude="34.851939" longitude="-82.399752"}}
+{{google-map latitude=model.latitude longitude=model.longitude}}
 
 {{user-location model=model}}
-
+</div>
 <form class="add-form">
   <textarea class="add-form-input add-form-description" type="text">Enter a description of this parking lot</textarea>
-  <input class="add-form-input add-form-biking"type="checkbox" name="day" value="biking"> Is this lot near biking paths?
-  <input class="add-form-input add-form-walking"type="checkbox" name="day" value="walking"> Is this lot near walking paths?
-  <input class="add-form-input add-form-publictransit"type="checkbox" name="day" value="publictransit"> Is this lot near public transit?
+  <ul class="activityList">
+    <li class="activityCheck">
+      <input class="add-form-input add-form-biking"type="checkbox" name="day" value="biking"> Is this lot near biking paths?
+    </li>
+    <li class="activityCheck">
+      <input class="add-form-input add-form-walking"type="checkbox" name="day" value="walking"> Is this lot near walking paths?
+    </li>
+    <li class="activityCheck">
+      <input class="add-form-input add-form-publictransit"type="checkbox" name="day" value="publictransit"> Is this lot near public transit?
+    </li>
+  </ul>
   <p>Rate this lot's safety from 1 to 10</p>
-  <select name="safety">
+  <select class="safety" name="safety">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -24,7 +33,8 @@
     <option value="9">9</option>
     <option value="10">10</option>
   </select>
-  <input type="submit" value="Submit this lot!">
+  <input type="submit" value="Submit this lot!" {{action 'submit'}}>
 </form>
+</section>
 
 {{outlet}}

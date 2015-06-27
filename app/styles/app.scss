@@ -21,11 +21,49 @@ $base-background-color: $very-light-gray;
 
 body {
   font-family: $base-font-family;
-  background-color: $base-background-color;
+  background-color: #999999;
   color: $base-font-color;
 }
 
 .map-canvas {
-        height: 500px;
-        width: 500px;
+  height: 500px;
+  @include span-columns(12);
+}
+
+.addContainer {
+  @include span-columns(8);
+  @include shift(2);
+  
+  .header {
+    text-align: center;
+  }
+  
+  .map {
+    text-align: center;
+  }
+}
+
+.activityList {
+  @include span-columns(6);
+  @include shift(2);
+}
+
+.activityCheck {
+  list-style-type: none;
+}
+
+.add-form-description {
+  margin: 0 auto;
+  width: 500px;
+  height: 100px;
+  display: block;
+}
+
+.user-latitude {
+  display: inline-block;
+  margin: 20px;
+}
+
+.user-longitude {
+  display: inline-block;
 }
