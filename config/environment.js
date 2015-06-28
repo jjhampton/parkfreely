@@ -21,10 +21,10 @@ module.exports = function(environment) {
       'default-src': "'self'",
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval' maps.googleapis.com maps.gstatic.com *.googleapis.com",
       'font-src': "'self' fonts.gstatic.com",
-      'connect-src': "'self' api.soundcloud.com",
+      'connect-src': "'self'",
       'img-src': "'self' maps.googleapis.com csi.gstatic.com maps.gstatic.com *.googleapis.com",
       'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
-      'media-src': "'self' cf-media.sndcdn.com"
+      'media-src': "'self'"
     }
   };
 
