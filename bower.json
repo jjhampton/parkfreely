@@ -18,5 +18,18 @@
   "resolutions": {
     "ember": "~1.13.0",
     "ember-data": "~1.13.4"
-  }
+  },
+  "version": "0.0.0",
+  "homepage": "https://github.com/jjhampton/parkfreely",
+  "authors": [
+    "John Hampton <john_j_hampton@yahoo.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }

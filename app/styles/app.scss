@@ -42,19 +42,14 @@ body {
   @include shift(2);
   background-color: #74828F;
   border-radius: 5px;
-<<<<<<< HEAD
+	color: #364CA8;
 
-=======
-  color: #364CA8;
-  
->>>>>>> 414cae32ba8fcc13c129ee75ccde2a9225bcad2b
-  .header {
-    text-align: center;
-  }
+.header {
+  text-align: center;
+}
 
-  .map {
-    text-align: center;
-  }
+.map {
+  text-align: center;
 }
 
 .activityList {
