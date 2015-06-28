@@ -42,14 +42,15 @@ body {
   @include shift(2);
   background-color: #74828F;
   border-radius: 5px;
-	color: #364CA8;
+  color: #364CA8;
 
-.header {
-  text-align: center;
-}
+  .header {
+    text-align: center;
+  }
 
-.map {
-  text-align: center;
+  .map {
+    text-align: center;
+  }
 }
 
 .activityList {
