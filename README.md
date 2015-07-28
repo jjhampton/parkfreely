@@ -1,10 +1,19 @@
-# parkfreely
-A highly optimized free parking application
+# Parkfreely
+A highly optimized crowdsourced free parking application built for the Greenville, SC community.
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+I built this as part of a team at the 2015 <a href="http://www.imagineupstate.org/">Imagine Upstate</a> Civic Hackathon using Ember.js.  This rapid prototype was built over a 24 hour sprint. The original design planned for an Ember front-end and a Django back-end server.
 
-## Prerequisites
+##Live Demo:
+* http://jjhampton.github.io/parkfreely
+
+##Tools & Techniques
+
+- Ember.js / Ember CLI
+- Google Maps API
+- HTML5 Geolocation
+- Bourbon Neat grid for responsive design
+
+## Install Dependencies
 
 You will need the following things properly installed on your computer.
 
