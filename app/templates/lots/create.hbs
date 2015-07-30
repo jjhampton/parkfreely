@@ -3,10 +3,7 @@
   <h1 class="header">Add a Lot!</h1>
   <div class="map">
     <p class="add-text">Your current location is:</p>
-
-    {{google-map latitude=model.latitude longitude=model.longitude}}
-
-    {{user-location model=model}}
+    {{leaflet-map}}
   </div>
   <form class="add-form">
     <textarea class="add-form-input add-form-description" type="text" placeholder="Enter a description of this parking lot"></textarea>

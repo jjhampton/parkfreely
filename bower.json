@@ -13,7 +13,8 @@
     "loader.js": "ember-cli/loader.js#3.2.0",
     "qunit": "~1.17.1",
     "bourbon": "~4.2.3",
-    "neat": "~1.7.2"
+    "neat": "~1.7.2",
+    "leaflet": "~0.7.3"
   },
   "resolutions": {
     "ember": "~1.13.0",

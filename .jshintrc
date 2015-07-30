@@ -30,6 +30,7 @@
   "esnext": true,
   "unused": true,
   "globals": {
-    "$": false
+    "$": false,
+    "L": false
   }
 }

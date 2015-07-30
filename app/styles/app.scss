@@ -43,6 +43,10 @@ body {
   border-radius: 5px;
 }
 
+#lots-create-map {
+	height: 180px;
+}
+
 .addContainer {
   @include span-columns(8);
   @include shift(2);
