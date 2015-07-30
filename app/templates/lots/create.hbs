@@ -3,8 +3,8 @@
   <h1 class="header">Add a Lot!</h1>
   <div class="map">
     <p class="add-text">Your current location is:</p>
-
-    {{google-map latitude=model.latitude longitude=model.longitude}}
+    {{leaflet-map}}
+    {{!-- {{google-map latitude=model.latitude longitude=model.longitude}} --}}
 
     {{user-location model=model}}
   </div>
