@@ -8,6 +8,10 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('add');
   this.route('search');
+
+  this.route('lots', function() {
+    this.route('create');
+  });
 });
 
 export default Router;
