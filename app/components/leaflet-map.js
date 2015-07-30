@@ -22,7 +22,7 @@ export default Ember.Component.extend({
     // add marker to map at user's location
 
     function onLocationFound(e) {
-      var marker = L.marker(e.latlng).addTo(map)
+      L.marker(e.latlng).addTo(map)
         .bindPopup("You are at this location").openPopup();
         map.setZoom(16);
         map.panTo(e.latlng);
