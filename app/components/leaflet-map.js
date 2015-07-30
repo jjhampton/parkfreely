@@ -23,7 +23,7 @@ export default Ember.Component.extend({
 
     function onLocationFound(e) {
       L.marker(e.latlng).addTo(map)
-        .bindPopup("You are at this location").openPopup();
+        .bindPopup("You are at this parking location").openPopup();
         map.setZoom(16);
         map.panTo(e.latlng);
     }
