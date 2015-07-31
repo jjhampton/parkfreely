@@ -15,6 +15,7 @@ $base-font-family: $helvetica;
 
 // Colors
 $blue: #477dca;
+$parkfreely-blue: #364CA8;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
@@ -30,7 +31,6 @@ body {
 }
 
 .smallLogo {
-  margin-bottom: -25px;
 	display:block;
   margin-left:auto;
   margin-right:auto;
@@ -55,14 +55,17 @@ body {
 .addContainer {
   @include span-columns(8);
   @include shift(2);
-  background-color: #74828F;
+  background-color: $light-gray;
   border-radius: 5px;
-  color: #364CA8;
+  color: $parkfreely-blue;
 	padding: 25px;
 
   .header {
     text-align: center;
-		color: $very-light-gray;
+		color: $parkfreely-blue;
+		font-size: 1.5em;
+		font-family: monospace;
+		font-style: italic;
   }
 
   .map {
@@ -100,6 +103,17 @@ body {
 .mission-statement,
 .index-text {
 	text-align: center;
+	color: $parkfreely-blue;
+	line-height: 2em;
+	font-size: 1em;
+	margin-bottom: 1em;
+}
+
+.mission-statement-list {
+	color: $parkfreely-blue;
+	font-size: 1.3em;
+	list-style: none;
+	font-weight: bold;
 }
 
 .user-latitude {
@@ -123,4 +137,5 @@ body {
 button,
 .add-form-submit {
   @include button;
+	background-color: $parkfreely-blue;
 }
