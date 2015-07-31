@@ -9,6 +9,22 @@ export default Ember.Route.extend({
    });
  },
 
+ actions: {
+   sendLotRating: function(lot) {
+     console.log(lot.get('description'));
+     console.log(lot.get('biking'));
+     console.log(lot.get('walking'));
+     console.log(lot.get('publictransit'));
+     console.log(lot.get('safety'));
+
+
+     lot.save().then(function() {
+       console.log('saved');
+       this.transitionTo('index');
+     }.bind(this));
+   }
+ }
+
 
 
   // getLocation: function() {

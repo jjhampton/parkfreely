@@ -7,18 +7,14 @@ export default Ember.Component.extend({
   currentSafetyNumber: 1,
   actions: {
     sendLotRating: function() {
-      var lot;
-      // console.log(this.get('model.latitude'));
-      // console.log(this.get('model.longitude'));
+
       console.log(this.get('lot.description'));
       console.log(this.get('lot.biking'));
       console.log(this.get('lot.walking'));
       console.log(this.get('lot.publictransit'));
       console.log(this.get('lot.safety'));
 
-
-
-      // this.sendAction('action', )
+      this.sendAction('action', this.get('lot'));
     }
   }
 });
