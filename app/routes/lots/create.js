@@ -2,70 +2,41 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function() {
-   return this.getLocation();
+   return this.store.createRecord('lot', {
+     biking: false,
+     walking: false,
+     publictransit: false
+   });
  },
 
  actions: {
-   submit: function() {
-    var latitude = $('.user-latitude').text();
-    var longitude = $('.user-longitude').text();
-    var description = $('.add-form-description').val();
-    var biking;
-    var walking;
-    var publictransit;
-    var safety = $('.safety :selected').text();
+   sendLotRating: function(lot) {
+     console.log(lot.get('description'));
+     console.log(lot.get('biking'));
+     console.log(lot.get('walking'));
+     console.log(lot.get('publictransit'));
+     console.log(lot.get('safety'));
 
-     if ($(".add-form-biking").prop('checked')) {
-       biking = true;
-     }
-     else {
-       biking = false;
-     }
-     if ($(".add-form-walking").prop('checked')) {
-       walking = true;
-     }
-     else {
-       walking = false;
-     }
-     if ($(".add-form-publictransit").prop('checked')) {
-       publictransit = true;
-     }
-     else {
-       publictransit = false;
-     }
-     console.log(latitude);
-     console.log(longitude);
-     console.log(description);
-     console.log(biking);
-     console.log(walking);
-     console.log(publictransit);
-     console.log(safety);
-     $.ajax({
-       method: "POST",
-       url: "localhost:8000/lots/post",
-       data: {
-         "latitude": latitude,
-         "location": longitude,
-         "description": description,
-         "biking": biking,
-         "walking": walking,
-         "publictransit": publictransit,
-         "safety": safety
-         }
-      });
-   }.bind(this)
- },
 
-  getLocation: function() {
-    if ('geolocation' in navigator) {
-      return new Ember.RSVP.Promise(function(resolve) {
-        var userLocation = {};
-        navigator.geolocation.getCurrentPosition(function(position) {
-          userLocation.latitude = position.coords.latitude;
-          userLocation.longitude = position.coords.longitude;
-          resolve(userLocation);
-        });
-      });
-    }
-  }
+     lot.save().then(function() {
+       console.log('saved');
+       this.transitionTo('index');
+     }.bind(this));
+   }
+ }
+
+
+
+  // getLocation: function() {
+  //   if ('geolocation' in navigator) {
+  //     return new Ember.RSVP.Promise(function(resolve) {
+  //       var userLocation = {};
+  //       navigator.geolocation.getCurrentPosition(function(position) {
+  //         userLocation.latitude = position.coords.latitude;
+  //         userLocation.longitude = position.coords.longitude;
+  //         resolve(userLocation);
+  //       });
+  //     });
+  //   }
+  // }
 });

@@ -1,0 +1,19 @@
+{{textarea class="add-form-input add-form-description" placeholder="Enter a description of this parking lot" value=lot.description}}
+<div class="activity-container">
+  <ul class="activity-list">
+    <li class="activity-check">
+      {{input class="add-form-input add-form-biking"type="checkbox" checked=lot.biking}}<strong>Is this lot near biking paths?</strong>
+    </li>
+    <li class="activity-check">
+      {{input class="add-form-input add-form-walking"type="checkbox" checked=lot.walking}}<strong>Is this lot near walking paths?</strong>
+    </li>
+    <li class="activity-check">
+      {{input class="add-form-input add-form-publictransit" type="checkbox" checked=lot.publictransit}}<strong>Is this lot near public transit?</strong>
+    </li>
+  </ul>
+</div>
+<p class="activity-check">Rate this lot's safety from 1 to 10:</p>
+{{view "select" classNames="rateIt" content=safetyNumbers value=lot.safety}}
+<button class="add-form-submit" {{action "sendLotRating"}}>Submit this parking area!</button>
+
+{{yield}}

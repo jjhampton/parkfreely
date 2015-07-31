@@ -14,14 +14,14 @@ module.exports = function(environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      applicationId: 'NR93AOttOhJraw8KeAGiw9P0x2pV154ipjrb8KKI',
+      restApiId: 'xcKf54oAfTSsx8f9qKrwShmS2tdHjVcRrhPYWPSq'
     },
     contentSecurityPolicy: {
       'default-src': "'self'",
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval' maps.googleapis.com maps.gstatic.com *.googleapis.com",
       'font-src': "'self' fonts.gstatic.com",
-      'connect-src': "'self'",
+      'connect-src': "'self' api.parse.com",
       'img-src': "'self' *.mapbox.com",
       'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
       'media-src': "'self'"
