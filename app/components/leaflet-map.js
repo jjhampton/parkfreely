@@ -19,21 +19,17 @@ export default Ember.Component.extend({
     // add tile to map
     mapBoxBackground.addTo(map);
 
-    // add marker to map at user's location
-
+    // event handler when user's location is found
     function onLocationFound(e) {
+      // add marker to map at user's location
       var marker = L.marker(e.latlng).addTo(map)
         .bindPopup("You are at this parking location").openPopup();
         map.setZoom(16);
         map.panTo(e.latlng);
 
-      console.log(this.get('lot'));
-
       //Sets latitude and longitude on current user model that is being created
       this.get('lot').set('latitude', marker.getLatLng().lat);
       this.get('lot').set('longitude', marker.getLatLng().lng);
-      console.log(this.get('lot.latitude'));
-      console.log(this.get('lot.longitude'));
     }
     map.on('locationfound', onLocationFound.bind(this));
 
