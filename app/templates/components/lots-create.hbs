@@ -1,4 +1,4 @@
-{{textarea class="add-form-input add-form-description" placeholder="Enter a description of this parking lot" value=model.description}}
+{{textarea class="add-form-input add-form-description" placeholder="Enter a description of this parking lot" value=lot.description}}
 <div class="activity-container">
   <ul class="activity-list">
     <li class="activity-check">
@@ -13,7 +13,9 @@
   </ul>
 </div>
 <p class="activity-check">Rate this lot's safety from 1 to 10:</p>
-{{view "select" classNames="rateIt" content=safetyNumbers value=safety}}
+{{view "select" classNames="rateIt" content=safetyNumbers value=lot.safety}}
+<button class="add-form-submit" {{action "sendLotRating"}}>Submit this parking area!</button>
+
 {{!-- <div class="rateIt">
   <p></p>
   <select class="safety" name="safety">
@@ -28,6 +30,5 @@
     <option value="9">9</option>
     <option value="10">10</option>
   </select>
-  <input  class="add-form-submit" type="submit" value="Submit this lot!" {{action 'submit'}}>
 </div> --}}
 {{yield}}

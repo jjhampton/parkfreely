@@ -2,20 +2,25 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function() {
-   return this.store.createRecord('lot');
+   return this.store.createRecord('lot', {
+     biking: false,
+     walking: false,
+     publictransit: false
+   });
  },
 
- 
-  getLocation: function() {
-    if ('geolocation' in navigator) {
-      return new Ember.RSVP.Promise(function(resolve) {
-        var userLocation = {};
-        navigator.geolocation.getCurrentPosition(function(position) {
-          userLocation.latitude = position.coords.latitude;
-          userLocation.longitude = position.coords.longitude;
-          resolve(userLocation);
-        });
-      });
-    }
-  }
+
+
+  // getLocation: function() {
+  //   if ('geolocation' in navigator) {
+  //     return new Ember.RSVP.Promise(function(resolve) {
+  //       var userLocation = {};
+  //       navigator.geolocation.getCurrentPosition(function(position) {
+  //         userLocation.latitude = position.coords.latitude;
+  //         userLocation.longitude = position.coords.longitude;
+  //         resolve(userLocation);
+  //       });
+  //     });
+  //   }
+  // }
 });
