@@ -47,6 +47,11 @@ body {
 	height: 180px;
 }
 
+.lots-index-map {
+	height: 180px;
+	color: #364CA8;
+}
+
 .addContainer {
   @include span-columns(8);
   @include shift(2);

@@ -21,7 +21,7 @@ module.exports = function(environment) {
       'default-src': "'self'",
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval' maps.googleapis.com maps.gstatic.com *.googleapis.com",
       'font-src': "'self' fonts.gstatic.com",
-      'connect-src': "'self' api.parse.com",
+      'connect-src': "'self' api.parse.com maps.googleapis.com",
       'img-src': "'self' *.mapbox.com",
       'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
       'media-src': "'self'"

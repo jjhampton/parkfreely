@@ -6,6 +6,7 @@
   {{#each model as |lot|}}
   <li class="lot">
     <p class="lot-location">Location: {{lot.location}}</p>
+    {{leaflet-lotshow lot=lot}}
     <p class="lot-description">Description: {{lot.description}}</p>
     <p class="lot-biking">Near biking routes? {{lot.biking}}</p>
     <p class="lot-walking">Near walking routes? {{lot.walking}}</p>
