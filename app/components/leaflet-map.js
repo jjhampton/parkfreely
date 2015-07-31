@@ -22,13 +22,20 @@ export default Ember.Component.extend({
     // add marker to map at user's location
 
     function onLocationFound(e) {
-      L.marker(e.latlng).addTo(map)
+      var marker = L.marker(e.latlng).addTo(map)
         .bindPopup("You are at this parking location").openPopup();
         map.setZoom(16);
         map.panTo(e.latlng);
-    }
 
-    map.on('locationfound', onLocationFound);
+      console.log(this.get('lot'));
+
+      //Sets latitude and longitude on current user model that is being created
+      this.get('lot').set('latitude', marker.getLatLng().lat);
+      this.get('lot').set('longitude', marker.getLatLng().lng);
+      console.log(this.get('lot.latitude'));
+      console.log(this.get('lot.longitude'));
+    }
+    map.on('locationfound', onLocationFound.bind(this));
 
   }
 });

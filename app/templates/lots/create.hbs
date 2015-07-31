@@ -3,7 +3,7 @@
   <h1 class="header">Add a Lot!</h1>
   <div class="map">
     <p class="add-text">Your current location is:</p>
-    {{leaflet-map}}
+    {{leaflet-map lot=model}}
   </div>
     {{lots-create lot=model action='sendLotRating'}}
 </div>
