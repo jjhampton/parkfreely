@@ -19,7 +19,6 @@ export default Ember.Route.extend({
      console.log(lot.get('publictransit'));
      console.log(lot.get('safety'));
 
-
      lot.save().then(function() {
        console.log('saved');
        this.transitionTo('index');
