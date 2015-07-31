@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  classNames: ['lots-index-map'],
   didInsertElement: function() {
 
 
@@ -15,7 +16,7 @@ export default Ember.Component.extend({
     minZoom: 0,
     maxZoom: 20
     });
-    
+
     // map object, set to locate geolocation
     var map = L.map('lots-index-' + this.get('lot.id'), {attributionControl: false}).setView([this.get('lot.latitude'), this.get('lot.longitude')]);
 

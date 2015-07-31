@@ -1,10 +1,8 @@
 <div class="addContainer">
   <img class="smallLogo" src="./assets/LogoSmall.png">
   <h1 class="header">Add a Free Parking Area!</h1>
-  <div class="map">
     <p class="add-text">Your current location is:</p>
     {{leaflet-map lot=model}}
-  </div>
     {{lots-create lot=model action='sendLotRating'}}
 </div>
 

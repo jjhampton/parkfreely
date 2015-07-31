@@ -45,6 +45,8 @@ body {
 
 #lots-create-map {
 	height: 180px;
+	margin-bottom: 1em;
+	border: 1px solid $parkfreely-blue;
 }
 
 .lots-index-map {
@@ -98,6 +100,11 @@ body {
   display: block;
   border-radius: 5px;
 	font-size: 1em;
+	margin-bottom: 1em;
+}
+
+.add-form-input {
+	padding-right: 1em;
 }
 
 .mission-statement,
@@ -116,6 +123,10 @@ body {
 	font-weight: bold;
 }
 
+.add-text {
+	text-align: center;
+}
+
 .user-latitude {
   display: inline-block;
   margin: 20px;
@@ -126,8 +137,7 @@ body {
 }
 
 .rateIt {
-	display: block;
-	margin: 0 auto 50px auto;
+	display: inline-block;
 }
 
 .index-button-searchroute {
