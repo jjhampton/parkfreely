@@ -21,15 +21,23 @@ export default Ember.Component.extend({
 
     // event handler when user's location is found
     function onLocationFound(e) {
-      // add marker to map at user's location
-      var marker = L.marker(e.latlng).addTo(map)
-        .bindPopup("You are at this parking location").openPopup();
-        map.setZoom(16);
-        map.panTo(e.latlng);
-
-      //Sets latitude and longitude on current user model that is being created
-      this.get('lot').set('latitude', marker.getLatLng().lat);
-      this.get('lot').set('longitude', marker.getLatLng().lng);
+      // Request address from Google Geocoding API
+      Ember.$.ajax({
+        url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + e.latlng.lat + "," + e.latlng.lng,
+        type: 'GET',
+        dataType: 'json'
+      }).then(function(data) {
+        var address = data.results[0].address_components[0].short_name + " " + data.results[0].address_components[1].short_name + ", " + data.results[0].address_components[2].short_name + ", " + data.results[0].address_components[4].short_name;
+        console.log(address);
+        // add marker to map at user's location
+        var marker = L.marker(e.latlng).addTo(map)
+          .bindPopup(address).openPopup();
+          map.setZoom(16);
+          map.panTo(e.latlng);
+          //Sets latitude and longitude on current user model that is being created
+        this.get('lot').set('latitude', marker.getLatLng().lat);
+        this.get('lot').set('longitude', marker.getLatLng().lng);
+      }.bind(this));
     }
     map.on('locationfound', onLocationFound.bind(this));
 
