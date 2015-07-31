@@ -11,6 +11,8 @@ export default Ember.Route.extend({
 
  actions: {
    sendLotRating: function(lot) {
+     console.log(lot.get('latitude'));
+     console.log(lot.get('longitude'));
      console.log(lot.get('description'));
      console.log(lot.get('biking'));
      console.log(lot.get('walking'));
@@ -24,19 +26,4 @@ export default Ember.Route.extend({
      }.bind(this));
    }
  }
-
-
-
-  // getLocation: function() {
-  //   if ('geolocation' in navigator) {
-  //     return new Ember.RSVP.Promise(function(resolve) {
-  //       var userLocation = {};
-  //       navigator.geolocation.getCurrentPosition(function(position) {
-  //         userLocation.latitude = position.coords.latitude;
-  //         userLocation.longitude = position.coords.longitude;
-  //         resolve(userLocation);
-  //       });
-  //     });
-  //   }
-  // }
 });
