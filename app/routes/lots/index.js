@@ -7,13 +7,13 @@ export default Ember.Route.extend({
 
   actions: {
     addUpVote: function(lot) {
-      console.log('addUpVote > route');
-      this.sendAction('addUpVote', lot);
+      lot.incrementProperty('upvotes');
+      lot.save();
     },
 
     addDownVote: function(lot) {
-      console.log('addDownVote > route');
-      this.sendAction('addDownVote', lot);
+      lot.incrementProperty('downvotes');
+      lot.save();
     }
   }
 });
