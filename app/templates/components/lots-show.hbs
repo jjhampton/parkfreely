@@ -11,8 +11,8 @@
     <p class="lot-text lot-upvotes"><b>Upvotes:</b> {{lot.upvotes}}</p>
     <p class="lot-text lot-downvotes"><b>Downvotes:</b> {{lot.downvotes}}</p>
     <div class="lot-vote-container">
-      <button class="button-vote-up">Vote this lot up!</button>
-      <button class="button-vote-down">Vote this lot down!</button>
+      <button class="button-vote-up" {{action 'addUpVote' lot}}>Vote this lot up!</button>
+      <button class="button-vote-down"{{action 'addDownVote' lot}}>Vote this lot down!</button>
     </div>
   </li>
   <hr>

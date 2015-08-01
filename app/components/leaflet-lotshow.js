@@ -31,7 +31,6 @@ export default Ember.Component.extend({
       dataType: 'json'
     }).then(function(data) {
       var address = data.results[0].address_components[0].short_name + " " + data.results[0].address_components[1].short_name + ", " + data.results[0].address_components[2].short_name + ", " + data.results[0].address_components[4].short_name;
-      console.log(address);
       // add marker to map at user's location
       var marker = L.marker([this.get('lot.latitude'), this.get('lot.longitude')]).addTo(map)
         .bindPopup(address).openPopup();
