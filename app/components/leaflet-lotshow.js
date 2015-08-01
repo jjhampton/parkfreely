@@ -5,10 +5,12 @@ export default Ember.Component.extend({
   didInsertElement: function() {
 
 
-    console.log('lots-index-' + this.get('lot.id'));
-    console.log(this.get('lot.latitude'));
+    var mapId = 'lots-index-' + this.get('lot.id');
+    var latitude = this.get('lot.latitude');
+    var longitude = this.get('lot.longitude');
 
-    //map tile
+
+    // map tile
     var mapBoxBackground = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     id: 'jjhampton.f68b0cad',
@@ -18,7 +20,7 @@ export default Ember.Component.extend({
     });
 
     // map object, set to locate geolocation
-    var map = L.map('lots-index-' + this.get('lot.id'), {attributionControl: false}).setView([this.get('lot.latitude'), this.get('lot.longitude')]);
+    var map = L.map(mapId, {attributionControl: false}).setView([latitude, longitude]);
 
     // add tile to map
     mapBoxBackground.addTo(map);
@@ -34,7 +36,7 @@ export default Ember.Component.extend({
       // add marker to map at user's location
       var marker = L.marker([this.get('lot.latitude'), this.get('lot.longitude')]).addTo(map)
         .bindPopup(address).openPopup();
-        map.setZoom(16);
+        map.setZoom(17);
         map.panTo([this.get('lot.latitude'), this.get('lot.longitude')]);
         //Sets latitude and longitude on current user model that is being created
       this.get('lot').set('latitude', marker.getLatLng().lat);

@@ -32,7 +32,7 @@ export default Ember.Component.extend({
         // add marker to map at user's location
         var marker = L.marker(e.latlng).addTo(map)
           .bindPopup(address).openPopup();
-          map.setZoom(16);
+          map.setZoom(17);
           map.panTo(e.latlng);
           //Sets latitude and longitude on current user model that is being created
         this.get('lot').set('latitude', marker.getLatLng().lat);
