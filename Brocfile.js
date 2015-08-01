@@ -20,5 +20,6 @@ var app = new EmberApp();
 app.import('bower_components/leaflet/dist/leaflet.js');
 app.import('bower_components/leaflet/dist/leaflet-src.js');
 app.import('bower_components/leaflet/dist/leaflet.css');
+app.import('bower_components/Leaflet.loading/src/Control.Loading.js');
 
 module.exports = app.toTree();

@@ -13,7 +13,7 @@ export default Ember.Component.extend({
     });
 
     // map object, set to locate geolocation
-    var map = L.map('lots-create-map',{attributionControl: false}).locate({setView: true});
+    var map = L.map('lots-create-map',{attributionControl: false, loadingControl: true}).locate({setView: true});
 
     // add tile to map
     mapBoxBackground.addTo(map);
