@@ -26,7 +26,7 @@ $base-background-color: $very-light-gray;
 
 body {
   font-family: $base-font-family;
-  background-color: #525564;
+  background-color: $parkfreely-blue;
   color: $base-background-color;
 }
 
@@ -57,7 +57,7 @@ body {
 .addContainer {
   @include span-columns(8);
   @include shift(2);
-  background-color: $light-gray;
+  background-color: #fff;
   border-radius: 5px;
   color: $parkfreely-blue;
 	padding: 25px;
@@ -73,6 +73,15 @@ body {
   .map {
     text-align: center;
   }
+}
+
+.image-container {
+	background: #42C163;
+	border: 1px solid $parkfreely-blue;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 0px 3px 1px #364CA8;
+       -moz-box-shadow: 0 0px 3px 1px #364CA8;
+            box-shadow: 0 0px 3px 1px #364CA8;
 }
 
 .activity-container {
@@ -118,7 +127,6 @@ body {
 
 .mission-statement-list {
 	color: $parkfreely-blue;
-	font-size: 1.3em;
 	list-style: none;
 	font-weight: bold;
 }
