@@ -18,6 +18,13 @@ export default Ember.Component.extend({
     maxZoom: 20
     });
 
+    // leaflet-awesome-marker
+    var awesomeMarker = L.AwesomeMarkers.icon({
+      icon: 'car',
+      markerColor: 'red',
+      prefix: 'fa'
+    });
+
     // map object, set to locate geolocation
     var map = L.map(mapId, {attributionControl: false}).setView([latitude, longitude]);
 
@@ -32,7 +39,7 @@ export default Ember.Component.extend({
     }).then(function(data) {
       var address = data.results[0].address_components[0].short_name + " " + data.results[0].address_components[1].short_name + ", " + data.results[0].address_components[2].short_name + ", " + data.results[0].address_components[4].short_name;
       // add marker to map at user's location
-      var marker = L.marker([this.get('lot.latitude'), this.get('lot.longitude')]).addTo(map)
+      var marker = L.marker([this.get('lot.latitude'), this.get('lot.longitude')],{icon: awesomeMarker}).addTo(map)
         .bindPopup(address).openPopup();
         map.setZoom(17);
         map.panTo([this.get('lot.latitude'), this.get('lot.longitude')]);

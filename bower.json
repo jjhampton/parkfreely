@@ -14,7 +14,8 @@
     "qunit": "~1.17.1",
     "bourbon": "~4.2.3",
     "neat": "~1.7.2",
-    "leaflet": "~0.7.3"
+    "leaflet": "~0.7.3",
+    "leaflet-awesome-markers": "~2.0.2"
   },
   "resolutions": {
     "ember": "~1.13.0",

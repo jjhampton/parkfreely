@@ -21,5 +21,9 @@ app.import('bower_components/leaflet/dist/leaflet.js');
 app.import('bower_components/leaflet/dist/leaflet-src.js');
 app.import('bower_components/leaflet/dist/leaflet.css');
 app.import('bower_components/Leaflet.loading/src/Control.Loading.js');
+app.import('bower_components/font-awesome/fonts/fontawesome-webfont.ttf');
+app.import('bower_components/leaflet-awesome-markers/dist/leaflet.awesome-markers.min.js');
+app.import('bower_components/leaflet-awesome-markers/dist/leaflet.awesome-markers.css');
+
 
 module.exports = app.toTree();
