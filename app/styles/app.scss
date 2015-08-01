@@ -32,7 +32,7 @@ $base-background-color: $very-light-gray;
 
 body {
   font-family: $base-font-family;
-  background-color: $parkfreely-blue;
+  background-color: #42C163;
   color: $base-background-color;
 }
 
@@ -40,6 +40,7 @@ body {
   @include span-columns(8);
   @include shift(2);
   background-color: #fff;
+	border: 2px solid $parkfreely-blue;
   border-radius: 5px;
   color: $parkfreely-blue;
 	padding: 2em;
@@ -99,6 +100,7 @@ button,
 .add-form-submit {
   @include button;
 	background-color: $parkfreely-blue;
+	font-family: $cantarell;
 }
 
 /*=====================================
