@@ -84,28 +84,32 @@ body {
             box-shadow: 0 0px 3px 1px #364CA8;
 }
 
+/*=====================================
+Lots-Create
+=====================================*/
+
 .activity-container {
-	margin: 0 auto;
+	@include span-columns(6 of 8);
+	@include shift(1);
+	@include omega();
 }
 
 .activity-list {
-	margin: 0 auto;
-	margin-bottom: 50px;
+	list-style: none;
 }
 
 .activity-check {
-	position: relative;
-	left: 25%;
-	list-style-position: none;
-	font-size: 1.2em;
-	font-weight: bold;
+	margin-bottom: 0.5em;
 }
 
+.activity-check-text {
+	padding-left: 1em;
+}
 
 .add-form-description {
-  margin: 0 auto;
-  width: 500px;
+	color: $parkfreely-blue;
   height: 100px;
+	width: 100%;
   display: block;
   border-radius: 5px;
 	font-size: 1em;
@@ -113,7 +117,21 @@ body {
 }
 
 .add-form-input {
-	padding-right: 1em;
+	margin-bottom: 0.5em;
+}
+
+.activity-safety-rate-text {
+	text-align: center;
+}
+
+.activity-safety-rating {
+	display: block;
+	margin: 0 auto 2em auto;
+}
+
+.add-form-submit {
+	display: block;
+	margin: 0 auto;
 }
 
 .mission-statement,
@@ -144,9 +162,7 @@ body {
   display: inline-block;
 }
 
-.rateIt {
-	display: inline-block;
-}
+
 
 .index-button-searchroute {
 	float: right;

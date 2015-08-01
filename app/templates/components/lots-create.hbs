@@ -2,18 +2,18 @@
 <div class="activity-container">
   <ul class="activity-list">
     <li class="activity-check">
-      {{input class="add-form-input add-form-biking"type="checkbox" checked=lot.biking}}<strong>Is this parking area near biking paths?</strong>
+      {{input class="add-form-input add-form-biking"type="checkbox" checked=lot.biking}}<span class="activity-check-text">Near biking paths?</span>
     </li>
     <li class="activity-check">
-      {{input class="add-form-input add-form-walking"type="checkbox" checked=lot.walking}}<strong>Is this parking area near walking paths?</strong>
+      {{input class="add-form-input add-form-walking"type="checkbox" checked=lot.walking}}<span class="activity-check-text">Near walking paths?</span>
     </li>
     <li class="activity-check">
-      {{input class="add-form-input add-form-publictransit" type="checkbox" checked=lot.publictransit}}<strong>Is this parking area near public transit?</strong>
+      {{input class="add-form-input add-form-publictransit" type="checkbox" checked=lot.publictransit}}<span class="activity-check-text">Near public transit?</span>
     </li>
   </ul>
-</div>
-<span class="activity-check">Rate this lot's safety from 1 to 10:</span>
-{{view "select" classNames="rateIt" content=safetyNumbers value=lot.safety}}
+<p class="activity-safety-rate-text">Rate this lot's safety from 1 to 10:</p>
+{{view "select" classNames="activity-safety-rating" content=safetyNumbers value=lot.safety}}
 <button class="add-form-submit" {{action "sendLotRating"}}>Submit this parking area!</button>
+</div>
 
 {{yield}}
