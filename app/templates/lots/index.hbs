@@ -1,23 +1,12 @@
-<h1 class="header">ParkFreely Find a Lot!</h1>
+<div class="outer-grid-container">
+  <div class="image-container">
+    {{#link-to 'index'}}<img class="small-logo" src="./assets/LogoSmall.png">{{/link-to}}
+  </div>
 
-<p class="text">Currently community-submitted free parking lots are:</p>
+  <h1 class="header">Find a Free Parking Area!</h1>
 
-<ul class="lot-list">
-  {{#each model as |lot|}}
-  <li class="lot">
-    <p class="lot-location">Location: {{lot.location}}</p>
-    {{leaflet-lotshow lot=lot}}
-    <p class="lot-description">Description: {{lot.description}}</p>
-    <p class="lot-biking">Near biking routes? {{lot.biking}}</p>
-    <p class="lot-walking">Near walking routes? {{lot.walking}}</p>
-    <p class="lot-publictransit">Near public transit? {{lot.publictransit}}</p>
-    <p class="lot-safety">Safety Rating: {{lot.safety}}</p>
-    <p class="lot-upvotes">Upvotes:</p>
-    <p class="lot-downvotes">Downvotes:</p>
-    <button class="button-vote-up">Vote this lot up!</button>
-    <button class="button-vote-down">Vote this lot down!</button>
-  </li>
-  {{/each}}
-</ul>
+  <p class="text">Currently community-submitted free parking areas:</p>
+  {{lots-show lots=model}}
+</div>
 
 {{outlet}}

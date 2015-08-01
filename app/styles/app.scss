@@ -2,6 +2,11 @@
 //$gutter: 0em;
 @import 'bower_components/neat/app/assets/stylesheets/neat';
 
+
+/*=====================================
+Base / Universal
+=====================================*/
+
 * {
 	box-sizing: border-box;
 }
@@ -12,9 +17,11 @@ a {
 
 // Typography
 $base-font-family: $helvetica;
+$cantarell: 'Cantarell', sans-serif;
 
 // Colors
 $blue: #477dca;
+$parkfreely-blue: #364CA8;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
@@ -25,95 +32,67 @@ $base-background-color: $very-light-gray;
 
 body {
   font-family: $base-font-family;
-  background-color: #525564;
+  background-color: #42C163;
   color: $base-background-color;
 }
 
-.smallLogo {
-  margin-bottom: -25px;
+.outer-grid-container {
+  @include span-columns(8);
+  @include shift(2);
+  background-color: #fff;
+	border: 2px solid $parkfreely-blue;
+  border-radius: 5px;
+  color: $parkfreely-blue;
+	padding: 2em;
+	-webkit-box-shadow: 0 0px 3px 1px #364CA8;
+       -moz-box-shadow: 0 0px 3px 1px #364CA8;
+            box-shadow: 0 0px 3px 1px #364CA8;
+
+  .header {
+    text-align: center;
+		color: $parkfreely-blue;
+		font-size: 1.5em;
+		font-family: $cantarell;
+  }
+
+	.text {
+		text-align: center;
+	}
+}
+
+.small-logo {
 	display:block;
   margin-left:auto;
   margin-right:auto;
 }
 
-.map-canvas {
-  height: 500px;
-  @include span-columns(10);
-  @include shift(1);
-  border-radius: 5px;
+.image-container {
+	background: #42C163;
+	border: 1px solid $parkfreely-blue;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 0px 3px 1px #364CA8;
+       -moz-box-shadow: 0 0px 3px 1px #364CA8;
+            box-shadow: 0 0px 3px 1px #364CA8;
 }
 
-#lots-create-map {
-	height: 180px;
-}
-
-.lots-index-map {
-	height: 180px;
-	color: #364CA8;
-}
-
-.addContainer {
-  @include span-columns(8);
-  @include shift(2);
-  background-color: #74828F;
-  border-radius: 5px;
-  color: #364CA8;
-	padding: 25px;
-
-  .header {
-    text-align: center;
-		color: $very-light-gray;
-  }
-
-  .map {
-    text-align: center;
-  }
-}
-
-.activity-container {
-	margin: 0 auto;
-}
-
-.activity-list {
-	margin: 0 auto;
-	margin-bottom: 50px;
-}
-
-.activity-check {
-	position: relative;
-	left: 25%;
-	list-style-position: none;
-	font-size: 1.2em;
-	font-weight: bold;
-}
-
-
-.add-form-description {
-  margin: 0 auto;
-  width: 500px;
-  height: 100px;
-  display: block;
-  border-radius: 5px;
-	font-size: 1em;
-}
+/*=====================================
+Index Page
+=====================================*/
 
 .mission-statement,
 .index-text {
 	text-align: center;
+	color: $parkfreely-blue;
+	line-height: 2em;
+	font-size: 1em;
+	margin-bottom: 1em;
 }
 
-.user-latitude {
-  display: inline-block;
-  margin: 20px;
-}
-
-.user-longitude {
-  display: inline-block;
-}
-
-.rateIt {
-	display: block;
-	margin: 0 auto 50px auto;
+.mission-statement-list {
+	color: $parkfreely-blue;
+	font-family: $cantarell;
+	list-style: none;
+	font-weight: bold;
 }
 
 .index-button-searchroute {
@@ -123,4 +102,102 @@ body {
 button,
 .add-form-submit {
   @include button;
+	background-color: $parkfreely-blue;
+	font-family: $cantarell;
+}
+
+/*=====================================
+Lots-Create Page
+=====================================*/
+.add-text {
+	text-align: center;
+}
+
+#lots-create-map {
+	height: 180px;
+	margin-bottom: 1em;
+	border: 1px solid $parkfreely-blue;
+	-webkit-box-shadow: 0 1px 4px #999;
+       -moz-box-shadow: 0 1px 4px #999;
+            box-shadow: 0 1px 4px #999;
+}
+
+.activity-container {
+	@include span-columns(6 of 8);
+	@include shift(1);
+	@include omega();
+}
+
+.activity-list {
+	list-style: none;
+}
+
+.activity-check {
+	margin-bottom: 0.5em;
+}
+
+.activity-check-text {
+	padding-left: 1em;
+}
+
+.add-form-description {
+	color: $parkfreely-blue;
+  height: 100px;
+	width: 100%;
+  display: block;
+  border-radius: 5px;
+	font-size: 1em;
+	margin-bottom: 1em;
+}
+
+.add-form-input {
+	margin-bottom: 0.5em;
+}
+
+.activity-safety-rate-text {
+	text-align: center;
+}
+
+.activity-safety-rating {
+	display: block;
+	margin: 0 auto 2em auto;
+}
+
+.add-form-submit {
+	display: block;
+	margin: 0 auto;
+}
+
+/*=====================================
+Lots-Show Page
+=====================================*/
+
+.lots-index-map {
+	height: 180px;
+	color: #364CA8;
+	-webkit-box-shadow: 0 1px 4px #999;
+       -moz-box-shadow: 0 1px 4px #999;
+            box-shadow: 0 1px 4px #999;
+}
+
+.lot-list {
+	list-style: none;
+	padding: 0;
+}
+
+.lot {
+	margin-bottom: 1em;
+}
+
+.lot-text {
+	margin-bottom: 0.5em;
+}
+
+.lot-location {
+	text-align: center;
+}
+
+.lot-vote-container {
+	text-align: center;
+	margin-bottom: 0.5em;
 }
