@@ -84,7 +84,7 @@ Index Page
 .index-text {
 	text-align: center;
 	color: $parkfreely-blue;
-	line-height: 2em;
+	line-height: 1.3em;
 	font-size: 1em;
 	margin-bottom: 1em;
 }
@@ -201,4 +201,10 @@ Lots-Show Page
 .lot-vote-container {
 	text-align: center;
 	margin-bottom: 0.5em;
+}
+
+.voted-text {
+	text-align: center;
+	font-family: $cantarell;
+	font-weight: bold;
 }

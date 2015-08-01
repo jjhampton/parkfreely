@@ -8,8 +8,8 @@ export default DS.Model.extend({
   walking: DS.attr('boolean'),
   publictransit: DS.attr('boolean'),
   safety: DS.attr('number'),
-  upvotes: DS.attr('number'),
-  downvotes: DS.attr('number'),
+  crowdscore: DS.attr('number'),
+  hasVoted: false,
   bikingShow: Ember.computed('biking', function() {
     if (this.get('biking')) {
       return "Yes";

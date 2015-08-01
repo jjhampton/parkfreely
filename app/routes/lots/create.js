@@ -11,14 +11,7 @@ export default Ember.Route.extend({
 
  actions: {
    sendLotRating: function(lot) {
-     console.log(lot.get('latitude'));
-     console.log(lot.get('longitude'));
-     console.log(lot.get('description'));
-     console.log(lot.get('biking'));
-     console.log(lot.get('walking'));
-     console.log(lot.get('publictransit'));
-     console.log(lot.get('safety'));
-
+     lot.set('crowdscore', 0);
      lot.save().then(function() {
        this.transitionTo('index');
      }.bind(this));
