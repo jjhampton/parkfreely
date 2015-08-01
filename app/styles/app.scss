@@ -2,6 +2,11 @@
 //$gutter: 0em;
 @import 'bower_components/neat/app/assets/stylesheets/neat';
 
+
+/*=====================================
+Base / Universal
+=====================================*/
+
 * {
 	box-sizing: border-box;
 }
@@ -30,37 +35,13 @@ body {
   color: $base-background-color;
 }
 
-.smallLogo {
-	display:block;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-.map-canvas {
-  height: 500px;
-  @include span-columns(10);
-  @include shift(1);
-  border-radius: 5px;
-}
-
-#lots-create-map {
-	height: 180px;
-	margin-bottom: 1em;
-	border: 1px solid $parkfreely-blue;
-}
-
-.lots-index-map {
-	height: 180px;
-	color: #364CA8;
-}
-
-.addContainer {
+.outer-grid-container {
   @include span-columns(8);
   @include shift(2);
   background-color: #fff;
   border-radius: 5px;
   color: $parkfreely-blue;
-	padding: 25px;
+	padding: 2em;
 
   .header {
     text-align: center;
@@ -70,9 +51,15 @@ body {
 		font-style: italic;
   }
 
-  .map {
-    text-align: center;
-  }
+	.text {
+		text-align: center;
+	}
+}
+
+.small-logo {
+	display:block;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .image-container {
@@ -85,8 +72,46 @@ body {
 }
 
 /*=====================================
-Lots-Create
+Index Page
 =====================================*/
+
+.mission-statement,
+.index-text {
+	text-align: center;
+	color: $parkfreely-blue;
+	line-height: 2em;
+	font-size: 1em;
+	margin-bottom: 1em;
+}
+
+.mission-statement-list {
+	color: $parkfreely-blue;
+	list-style: none;
+	font-weight: bold;
+}
+
+.index-button-searchroute {
+	float: right;
+}
+
+button,
+.add-form-submit {
+  @include button;
+	background-color: $parkfreely-blue;
+}
+
+/*=====================================
+Lots-Create Page
+=====================================*/
+.add-text {
+	text-align: center;
+}
+
+#lots-create-map {
+	height: 180px;
+	margin-bottom: 1em;
+	border: 1px solid $parkfreely-blue;
+}
 
 .activity-container {
 	@include span-columns(6 of 8);
@@ -134,42 +159,33 @@ Lots-Create
 	margin: 0 auto;
 }
 
-.mission-statement,
-.index-text {
-	text-align: center;
-	color: $parkfreely-blue;
-	line-height: 2em;
-	font-size: 1em;
+/*=====================================
+Lots-Show Page
+=====================================*/
+
+.lots-index-map {
+	height: 180px;
+	color: #364CA8;
+}
+
+.lot-list {
+	list-style: none;
+	padding: 0;
+}
+
+.lot {
 	margin-bottom: 1em;
 }
 
-.mission-statement-list {
-	color: $parkfreely-blue;
-	list-style: none;
-	font-weight: bold;
+.lot-text {
+	margin-bottom: 0.5em;
 }
 
-.add-text {
+.lot-location {
 	text-align: center;
 }
 
-.user-latitude {
-  display: inline-block;
-  margin: 20px;
-}
-
-.user-longitude {
-  display: inline-block;
-}
-
-
-
-.index-button-searchroute {
-	float: right;
-}
-
-button,
-.add-form-submit {
-  @include button;
-	background-color: $parkfreely-blue;
+.lot-vote-container {
+	text-align: center;
+	margin-bottom: 0.5em;
 }
