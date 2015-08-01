@@ -11,8 +11,7 @@ export default Ember.Route.extend({
 
  actions: {
    sendLotRating: function(lot) {
-     lot.set('upvotes', 0);
-     lot.set('downvotes', 0);
+     lot.set('crowdscore', 0);
      lot.save().then(function() {
        this.transitionTo('index');
      }.bind(this));

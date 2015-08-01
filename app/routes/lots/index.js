@@ -7,12 +7,14 @@ export default Ember.Route.extend({
 
   actions: {
     addUpVote: function(lot) {
-      lot.incrementProperty('upvotes');
+      lot.incrementProperty('crowdscore');
+      lot.set('hasVoted', true);
       lot.save();
     },
 
     addDownVote: function(lot) {
-      lot.incrementProperty('downvotes');
+      lot.decrementProperty('crowdscore');
+      lot.set('hasVoted', true);
       lot.save();
     }
   }
