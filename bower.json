@@ -15,7 +15,9 @@
     "bourbon": "~4.2.3",
     "neat": "~1.7.2",
     "leaflet": "~0.7.3",
-    "leaflet-awesome-markers": "~2.0.2"
+    "leaflet-awesome-markers": "~2.0.2",
+    "Leaflet.loading": "~0.1.16",
+    "font-awesome": "~4.4.0"
   },
   "resolutions": {
     "ember": "~1.13.0",
