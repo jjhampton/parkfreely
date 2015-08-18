@@ -1,0 +1,24 @@
+<ul class="lot-list">
+  {{#each lots as |lot|}}
+  <li class="lot">
+    <p class="lot-text lot-location"><b>Location:</b> {{lot.location}}</p>
+    {{leaflet-lotshow lot=lot}}
+    <p class="lot-text lot-description"><b>Description:</b> {{lot.description}}</p>
+    <p class="lot-text lot-biking"><b>Near biking routes?</b> {{lot.bikingShow}}</p>
+    <p class="lot-text lot-walking"><b>Near walking routes?</b> {{lot.walkingShow}}</p>
+    <p class="lot-text lot-publictransit"><b>Near public transit?</b> {{lot.publicTransitShow}}</p>
+    <p class="lot-text lot-safety"><b>Safety Rating:</b> {{lot.safety}}</p>
+    <p class="lot-text lot-upvotes"><b>Parkfreely Vote Score:</b> {{lot.crowdscore}}</p>
+    <div class="lot-vote-container">
+      {{#if lot.hasVoted}}
+        <p class='voted-text'>Thanks for your vote!</p>
+      {{else}}
+        <button class="button-vote-up" {{action 'addUpVote' lot}}>Vote up!</button>
+        <button class="button-vote-down"{{action 'addDownVote' lot}}>Vote down!</button>
+      {{/if}}
+    </div>
+  </li>
+  <hr>
+  {{/each}}
+</ul>
+{{yield}}

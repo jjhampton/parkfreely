@@ -1,16 +1,30 @@
+@import 'bower_components/font-awesome/scss/font-awesome';
+@import 'bower_components/leaflet-awesome-markers/dist/leaflet.awesome-markers';
 @import 'bower_components/bourbon/app/assets/stylesheets/bourbon';
 //$gutter: 0em;
 @import 'bower_components/neat/app/assets/stylesheets/neat';
+@import 'bower_components/Leaflet.loading/src/Control.Loading';
+
+
+/*=====================================
+Base / Universal
+=====================================*/
 
 * {
 	box-sizing: border-box;
 }
 
+a {
+	text-decoration: none;
+}
+
 // Typography
 $base-font-family: $helvetica;
+$cantarell: 'Cantarell', sans-serif;
 
 // Colors
 $blue: #477dca;
+$parkfreely-blue: #364CA8;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
@@ -21,67 +35,179 @@ $base-background-color: $very-light-gray;
 
 body {
   font-family: $base-font-family;
-  background-color: #525564;
+  background-color: #42C163;
   color: $base-background-color;
 }
 
-.smallLogo {
-  margin-left: 215px;
-  margin-bottom: -25px
-}
-
-.map-canvas {
-  height: 500px;
-  @include span-columns(10);
-  @include shift(1);
-  border-radius: 5px;
-}
-
-.addContainer {
+.outer-grid-container {
   @include span-columns(8);
   @include shift(2);
-  background-color: #74828F;
+  background-color: #fff;
+	border: 2px solid $parkfreely-blue;
   border-radius: 5px;
-  color: #364CA8;
+  color: $parkfreely-blue;
+	padding: 2em;
+	-webkit-box-shadow: 0 0px 3px 1px #364CA8;
+       -moz-box-shadow: 0 0px 3px 1px #364CA8;
+            box-shadow: 0 0px 3px 1px #364CA8;
 
   .header {
     text-align: center;
+		color: $parkfreely-blue;
+		font-size: 1.5em;
+		font-family: $cantarell;
   }
 
-  .map {
-    text-align: center;
-  }
+	.text {
+		text-align: center;
+	}
 }
 
-.activityList {
-  @include span-columns(6);
-  @include shift(3);
+.small-logo {
+	display:block;
+  margin-left:auto;
+  margin-right:auto;
 }
 
-.activityCheck {
-  list-style-type: none;
+.image-container {
+	background: #42C163;
+	border: 1px solid $parkfreely-blue;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 0px 3px 1px #364CA8;
+       -moz-box-shadow: 0 0px 3px 1px #364CA8;
+            box-shadow: 0 0px 3px 1px #364CA8;
+}
+
+/*=====================================
+Index Page
+=====================================*/
+
+.mission-statement,
+.index-text {
+	text-align: center;
+	color: $parkfreely-blue;
+	line-height: 1.3em;
+	font-size: 1em;
+	margin-bottom: 1em;
+}
+
+.mission-statement-list {
+	color: $parkfreely-blue;
+	font-family: $cantarell;
+	list-style: none;
+	font-weight: bold;
+}
+
+.index-button-searchroute {
+	float: right;
+}
+
+button,
+.add-form-submit {
+  @include button;
+	background-color: $parkfreely-blue;
+	font-family: $cantarell;
+}
+
+/*=====================================
+Lots-Create Page
+=====================================*/
+.add-text {
+	text-align: center;
+}
+
+#lots-create-map {
+	height: 180px;
+	margin-bottom: 1em;
+	border: 1px solid $parkfreely-blue;
+	-webkit-box-shadow: 0 1px 4px #999;
+       -moz-box-shadow: 0 1px 4px #999;
+            box-shadow: 0 1px 4px #999;
+}
+
+.activity-container {
+	@include span-columns(6 of 8);
+	@include shift(1);
+	@include omega();
+}
+
+.activity-list {
+	text-align:center;
+	list-style: none;
+}
+
+.activity-check {
+	margin-bottom: 0.5em;
+}
+
+.activity-check-text {
+	padding-left: 1em;
 }
 
 .add-form-description {
-  margin: 0 auto;
-  width: 500px;
+	color: $parkfreely-blue;
   height: 100px;
+	width: 100%;
   display: block;
   border-radius: 5px;
+	font-size: 1em;
+	margin-bottom: 1em;
 }
 
-.user-latitude {
-  display: inline-block;
-  margin: 20px;
+.add-form-input {
+	margin-bottom: 0.5em;
 }
 
-.user-longitude {
-  display: inline-block;
+.activity-safety-rate-text {
+	text-align: center;
 }
 
-.rateIt {
-  text-align: center;
-  @include span-columns(6);
-  @include shift(3);
-  margin-bottom: 50px;
+.activity-safety-rating {
+	display: block;
+	margin: 0 auto 2em auto;
+}
+
+.add-form-submit {
+	display: block;
+	margin: 0 auto;
+}
+
+/*=====================================
+Lots-Show Page
+=====================================*/
+
+.lots-index-map {
+	height: 180px;
+	color: #364CA8;
+	-webkit-box-shadow: 0 1px 4px #999;
+       -moz-box-shadow: 0 1px 4px #999;
+            box-shadow: 0 1px 4px #999;
+}
+
+.lot-list {
+	list-style: none;
+	padding: 0;
+}
+
+.lot {
+	margin-bottom: 1em;
+}
+
+.lot-text {
+	margin-bottom: 0.5em;
+}
+
+.lot-location {
+	text-align: center;
+}
+
+.lot-vote-container {
+	text-align: center;
+	margin-bottom: 0.5em;
+}
+
+.voted-text {
+	text-align: center;
+	font-family: $cantarell;
+	font-weight: bold;
 }

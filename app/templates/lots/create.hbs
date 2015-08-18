@@ -1,0 +1,11 @@
+<div class="outer-grid-container">
+  <div class="image-container">
+    {{#link-to 'index'}}<img class="small-logo" src="./assets/LogoSmall.png">{{/link-to}}
+  </div>
+  <h1 class="header">Add a Free Parking Area!</h1>
+    <p class="add-text">Your current location is:</p>
+    {{leaflet-map lot=model}}
+    {{lots-create lot=model action='sendLotRating'}}
+</div>
+
+{{outlet}}
