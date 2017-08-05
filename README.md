@@ -3,10 +3,10 @@ A highly optimized crowdsourced free parking application built for the Greenvill
 
 I built this as part of a team at the 2015 <a href="http://www.imagineupstate.org/">Imagine Upstate</a> Civic Hackathon using Ember.js.  This rapid prototype was built over a 24 hour sprint. The original design planned for an Ember front-end and a Django back-end server.
 
-##Live Demo:
+## Live Demo:
 * http://jjhampton.github.io/parkfreely
 
-##Tools & Techniques
+## Tools & Techniques
 
 - Ember.js / Ember CLI
 - Google Maps API
@@ -48,10 +48,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember build` (development)
 * `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
